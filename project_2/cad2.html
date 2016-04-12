@@ -1,0 +1,84 @@
+<!-- Project 2 - CS 4395
+// Jerry Paul
+// Spring 2016
+// Texas Tech University
+// Code Developed from http://www.cs.unm.edu/~angel/WebGL/7E/02/
+// 
+
+// Username : jepaul
+// Class    : CS 4395
+// Assignment : Project 2
+// Date Completed : 04/11/2016 -->
+<html>
+
+<script id="vertex-shader" type="x-shader/x-vertex">
+attribute vec4 vPosition;
+attribute vec4 vColor;
+
+varying vec4 fColor;
+
+
+void
+main()
+{
+    gl_Position = vPosition;
+    fColor = vColor;
+}
+</script>
+
+<script id="fragment-shader" type="x-shader/x-fragment">
+
+precision mediump float;
+
+varying vec4 fColor;
+void
+main()
+{
+    gl_FragColor = fColor;
+}
+</script>
+
+<script type="text/javascript" src="../Common/webgl-utils.js"></script>
+<script type="text/javascript" src="../Common/initShaders.js"></script>
+<script type="text/javascript" src="../Common/MV.js"></script>
+<script type="text/javascript" src="cad2.js"></script>
+
+<body>
+<div>
+<canvas id="gl-canvas" width="512"" height="512"
+Oops ... your browser doesn't support the HTML5 canvas element
+</canvas>
+</div>
+<div>
+<button id = "Button1">End Polygon</button>
+</div>
+
+<div id="change" style="height: 50px; width: 50px; background-color: rgb(0, 0, 0);"></div>
+<div data-role="content" class = "main" id = "main">
+    <div data-role="fieldcontain" data-controltype="slider" class="redSlider">      
+        <label for="red" color="red">
+            Red
+        </label>
+        <input id="red" type="range" name="redSlider" value="0" min="0" max="255"
+        data-highlight="true" data-mini="true"  />
+    </div>
+    <div data-role="fieldcontain" data-controltype="slider" class="greenSlider">
+        <label for="green">
+            Green
+        </label>
+        <input id="green" type="range" name="greenSlider" value="0" min="0"
+        max="255" data-highlight="true" data-mini="true"  />
+    </div>
+    <div data-role="fieldcontain" data-controltype="slider" class="blueSlider">
+        <label for="blue">
+            Blue
+        </label>
+        <input id="blue" type="range" name="blueSlider" value="0" min="0" max="255"
+        data-highlight="true" data-mini="true" />
+    </div>
+</div>
+
+
+
+</body>
+</html>
